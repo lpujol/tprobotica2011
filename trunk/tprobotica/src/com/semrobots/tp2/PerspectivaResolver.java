@@ -17,6 +17,7 @@ public class PerspectivaResolver {
 			Matrix Ms = parametros.getR().transpose().multiply((punto.substract(parametros.getS())));
 			
 			double lambda0 = calcularLambdaAproximado(parametros, Ms);
+			//lambda0=lambda0*10;
 			Matrix ms = Ms.scale(lambda0);
 			ms.set(0, 2, lambda0);
 			
@@ -29,6 +30,6 @@ public class PerspectivaResolver {
 		
 	private double calcularLambdaAproximado(ParametrosDeCamaraYPuntos parametros, Matrix Ms) {
 		double Mzs = Ms.get(0, 2);
-		return -parametros.getP() / Mzs;
+		return parametros.getP() / Mzs;
 	}
 }
