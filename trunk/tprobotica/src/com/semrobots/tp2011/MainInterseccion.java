@@ -25,9 +25,10 @@ public class MainInterseccion {
 			CSVTp2011.cargarArchivo(archivoEntrada2, parametros2);
 			
 			TP2011Resolver resolver=new TP2011Resolver();
+			resolver.resolver2(parametros,parametros2);
 			Matrix resultado=resolver.resolver(parametros,parametros2);
 			
-			System.out.println(resultado.get(0, 0)+","+resultado.get(0, 1) +","+resultado.get(0, 2));
+			//System.out.println(resultado.get(0, 0)+","+resultado.get(0, 1) +","+resultado.get(0, 2));
 			
 			FileWriter writer = new FileWriter(new File("salidaInterseccion.csv"));			
 				writer.write(lineToString(resultado));
